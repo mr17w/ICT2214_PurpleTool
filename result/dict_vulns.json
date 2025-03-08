@@ -1,0 +1,226 @@
+{
+    "qa3app09": {
+        "Terminal Services Doesn't Use Network Level Authentication (NLA)": {
+            "severity": "2",
+            "host": "qa3app09",
+            "description": "The remote Terminal Services is not configured to use Network Level Authentication (NLA). NLA uses the Credential Security Support Provider (CredSSP) protocol to perform strong server authentication either through TLS/SSL or Kerberos mechanisms, which protect against man-in-the-middle attacks. In addition to improving authentication, NLA also helps protect the remote computer from malicious users and software by completing user authentication before a full RDP connection is established.",
+            "plugin_name": "Terminal Services Doesn't Use Network Level Authentication (NLA)",
+            "solution": "Enable Network Level Authentication (NLA) on the remote RDP server. This is generally done on the 'Remote' tab of the 'System' settings on Windows."
+        },
+        "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness": {
+            "severity": "2",
+            "host": "qa3app09",
+            "description": "The remote version of the Remote Desktop Protocol Server (Terminal Service) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP client makes no effort to validate the identity of the server when setting up encryption. An attacker with the ability to intercept traffic from the RDP server can establish encryption with the client and server without being detected. A MiTM attack of this nature would allow the attacker to obtain any sensitive information transmitted, including authentication credentials.\n\nThis flaw exists because the RDP server stores a hardcoded RSA private key in the mstlsapi.dll library. Any local user with access to this file (on any Windows system) can retrieve the key and use it for this attack.",
+            "plugin_name": "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness",
+            "solution": "- Force the use of SSL as a transport layer for this service if supported, or/and\n- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available."
+        },
+        "Terminal Services Encryption Level is Medium or Low": {
+            "severity": "2",
+            "host": "qa3app09",
+            "description": "The remote Terminal Services service is not configured to use strong cryptography. \n\nUsing weak cryptography with this service may allow an attacker to eavesdrop on the communications more easily and obtain screenshots and/or keystrokes.",
+            "plugin_name": "Terminal Services Encryption Level is Medium or Low",
+            "solution": "Change RDP encryption level to one of :\n\n 3. High\n\n 4. FIPS Compliant"
+        },
+        "Terminal Services Encryption Level is not FIPS-140 Compliant": {
+            "severity": "1",
+            "host": "qa3app09",
+            "description": "The encryption setting used by the remote Terminal Services service is not FIPS-140 compliant.",
+            "plugin_name": "Terminal Services Encryption Level is not FIPS-140 Compliant",
+            "solution": "Change RDP encryption level to :\n\n 4. FIPS Compliant"
+        },
+        "SMB Signing Disabled": {
+            "severity": "2",
+            "host": "qa3app09",
+            "description": "Signing is disabled on the remote SMB server.  This can allow man-in-the-middle attacks against the SMB server.",
+            "plugin_name": "SMB Signing Disabled",
+            "solution": "Enforce message signing in the host's configuration.  On Windows, this is found in the Local Security Policy.  On Samba, the setting is called 'server signing'.  See the 'see also' links for further details."
+        }
+    },
+    "qa3app06": {
+        "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness": {
+            "severity": "2",
+            "host": "qa3app06",
+            "description": "The remote version of the Remote Desktop Protocol Server (Terminal Service) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP client makes no effort to validate the identity of the server when setting up encryption. An attacker with the ability to intercept traffic from the RDP server can establish encryption with the client and server without being detected. A MiTM attack of this nature would allow the attacker to obtain any sensitive information transmitted, including authentication credentials.\n\nThis flaw exists because the RDP server stores a hardcoded RSA private key in the mstlsapi.dll library. Any local user with access to this file (on any Windows system) can retrieve the key and use it for this attack.",
+            "plugin_name": "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness",
+            "solution": "- Force the use of SSL as a transport layer for this service if supported, or/and\n- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available."
+        },
+        "Terminal Services Encryption Level is Medium or Low": {
+            "severity": "2",
+            "host": "qa3app06",
+            "description": "The remote Terminal Services service is not configured to use strong cryptography. \n\nUsing weak cryptography with this service may allow an attacker to eavesdrop on the communications more easily and obtain screenshots and/or keystrokes.",
+            "plugin_name": "Terminal Services Encryption Level is Medium or Low",
+            "solution": "Change RDP encryption level to one of :\n\n 3. High\n\n 4. FIPS Compliant"
+        },
+        "Terminal Services Encryption Level is not FIPS-140 Compliant": {
+            "severity": "1",
+            "host": "qa3app06",
+            "description": "The encryption setting used by the remote Terminal Services service is not FIPS-140 compliant.",
+            "plugin_name": "Terminal Services Encryption Level is not FIPS-140 Compliant",
+            "solution": "Change RDP encryption level to :\n\n 4. FIPS Compliant"
+        },
+        "SMB Signing Disabled": {
+            "severity": "2",
+            "host": "qa3app06",
+            "description": "Signing is disabled on the remote SMB server.  This can allow man-in-the-middle attacks against the SMB server.",
+            "plugin_name": "SMB Signing Disabled",
+            "solution": "Enforce message signing in the host's configuration.  On Windows, this is found in the Local Security Policy.  On Samba, the setting is called 'server signing'.  See the 'see also' links for further details."
+        }
+    },
+    "qa3app05": {
+        "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness": {
+            "severity": "2",
+            "host": "qa3app05",
+            "description": "The remote version of the Remote Desktop Protocol Server (Terminal Service) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP client makes no effort to validate the identity of the server when setting up encryption. An attacker with the ability to intercept traffic from the RDP server can establish encryption with the client and server without being detected. A MiTM attack of this nature would allow the attacker to obtain any sensitive information transmitted, including authentication credentials.\n\nThis flaw exists because the RDP server stores a hardcoded RSA private key in the mstlsapi.dll library. Any local user with access to this file (on any Windows system) can retrieve the key and use it for this attack.",
+            "plugin_name": "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness",
+            "solution": "- Force the use of SSL as a transport layer for this service if supported, or/and\n- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available."
+        },
+        "Terminal Services Encryption Level is Medium or Low": {
+            "severity": "2",
+            "host": "qa3app05",
+            "description": "The remote Terminal Services service is not configured to use strong cryptography. \n\nUsing weak cryptography with this service may allow an attacker to eavesdrop on the communications more easily and obtain screenshots and/or keystrokes.",
+            "plugin_name": "Terminal Services Encryption Level is Medium or Low",
+            "solution": "Change RDP encryption level to one of :\n\n 3. High\n\n 4. FIPS Compliant"
+        },
+        "Terminal Services Encryption Level is not FIPS-140 Compliant": {
+            "severity": "1",
+            "host": "qa3app05",
+            "description": "The encryption setting used by the remote Terminal Services service is not FIPS-140 compliant.",
+            "plugin_name": "Terminal Services Encryption Level is not FIPS-140 Compliant",
+            "solution": "Change RDP encryption level to :\n\n 4. FIPS Compliant"
+        },
+        "SMB Signing Disabled": {
+            "severity": "2",
+            "host": "qa3app05",
+            "description": "Signing is disabled on the remote SMB server.  This can allow man-in-the-middle attacks against the SMB server.",
+            "plugin_name": "SMB Signing Disabled",
+            "solution": "Enforce message signing in the host's configuration.  On Windows, this is found in the Local Security Policy.  On Samba, the setting is called 'server signing'.  See the 'see also' links for further details."
+        }
+    },
+    "qa3app04": {
+        "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness": {
+            "severity": "2",
+            "host": "qa3app04",
+            "description": "The remote version of the Remote Desktop Protocol Server (Terminal Service) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP client makes no effort to validate the identity of the server when setting up encryption. An attacker with the ability to intercept traffic from the RDP server can establish encryption with the client and server without being detected. A MiTM attack of this nature would allow the attacker to obtain any sensitive information transmitted, including authentication credentials.\n\nThis flaw exists because the RDP server stores a hardcoded RSA private key in the mstlsapi.dll library. Any local user with access to this file (on any Windows system) can retrieve the key and use it for this attack.",
+            "plugin_name": "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness",
+            "solution": "- Force the use of SSL as a transport layer for this service if supported, or/and\n- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available."
+        },
+        "Terminal Services Encryption Level is Medium or Low": {
+            "severity": "2",
+            "host": "qa3app04",
+            "description": "The remote Terminal Services service is not configured to use strong cryptography. \n\nUsing weak cryptography with this service may allow an attacker to eavesdrop on the communications more easily and obtain screenshots and/or keystrokes.",
+            "plugin_name": "Terminal Services Encryption Level is Medium or Low",
+            "solution": "Change RDP encryption level to one of :\n\n 3. High\n\n 4. FIPS Compliant"
+        },
+        "Terminal Services Encryption Level is not FIPS-140 Compliant": {
+            "severity": "1",
+            "host": "qa3app04",
+            "description": "The encryption setting used by the remote Terminal Services service is not FIPS-140 compliant.",
+            "plugin_name": "Terminal Services Encryption Level is not FIPS-140 Compliant",
+            "solution": "Change RDP encryption level to :\n\n 4. FIPS Compliant"
+        },
+        "SMB Signing Disabled": {
+            "severity": "2",
+            "host": "qa3app04",
+            "description": "Signing is disabled on the remote SMB server.  This can allow man-in-the-middle attacks against the SMB server.",
+            "plugin_name": "SMB Signing Disabled",
+            "solution": "Enforce message signing in the host's configuration.  On Windows, this is found in the Local Security Policy.  On Samba, the setting is called 'server signing'.  See the 'see also' links for further details."
+        }
+    },
+    "qa3app03": {
+        "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness": {
+            "severity": "2",
+            "host": "qa3app03",
+            "description": "The remote version of the Remote Desktop Protocol Server (Terminal Service) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP client makes no effort to validate the identity of the server when setting up encryption. An attacker with the ability to intercept traffic from the RDP server can establish encryption with the client and server without being detected. A MiTM attack of this nature would allow the attacker to obtain any sensitive information transmitted, including authentication credentials.\n\nThis flaw exists because the RDP server stores a hardcoded RSA private key in the mstlsapi.dll library. Any local user with access to this file (on any Windows system) can retrieve the key and use it for this attack.",
+            "plugin_name": "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness",
+            "solution": "- Force the use of SSL as a transport layer for this service if supported, or/and\n- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available."
+        },
+        "Terminal Services Encryption Level is Medium or Low": {
+            "severity": "2",
+            "host": "qa3app03",
+            "description": "The remote Terminal Services service is not configured to use strong cryptography. \n\nUsing weak cryptography with this service may allow an attacker to eavesdrop on the communications more easily and obtain screenshots and/or keystrokes.",
+            "plugin_name": "Terminal Services Encryption Level is Medium or Low",
+            "solution": "Change RDP encryption level to one of :\n\n 3. High\n\n 4. FIPS Compliant"
+        },
+        "Terminal Services Encryption Level is not FIPS-140 Compliant": {
+            "severity": "1",
+            "host": "qa3app03",
+            "description": "The encryption setting used by the remote Terminal Services service is not FIPS-140 compliant.",
+            "plugin_name": "Terminal Services Encryption Level is not FIPS-140 Compliant",
+            "solution": "Change RDP encryption level to :\n\n 4. FIPS Compliant"
+        },
+        "SMB Signing Disabled": {
+            "severity": "2",
+            "host": "qa3app03",
+            "description": "Signing is disabled on the remote SMB server.  This can allow man-in-the-middle attacks against the SMB server.",
+            "plugin_name": "SMB Signing Disabled",
+            "solution": "Enforce message signing in the host's configuration.  On Windows, this is found in the Local Security Policy.  On Samba, the setting is called 'server signing'.  See the 'see also' links for further details."
+        }
+    },
+    "qa3app02": {
+        "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness": {
+            "severity": "2",
+            "host": "qa3app02",
+            "description": "The remote version of the Remote Desktop Protocol Server (Terminal Service) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP client makes no effort to validate the identity of the server when setting up encryption. An attacker with the ability to intercept traffic from the RDP server can establish encryption with the client and server without being detected. A MiTM attack of this nature would allow the attacker to obtain any sensitive information transmitted, including authentication credentials.\n\nThis flaw exists because the RDP server stores a hardcoded RSA private key in the mstlsapi.dll library. Any local user with access to this file (on any Windows system) can retrieve the key and use it for this attack.",
+            "plugin_name": "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness",
+            "solution": "- Force the use of SSL as a transport layer for this service if supported, or/and\n- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available."
+        },
+        "Terminal Services Encryption Level is Medium or Low": {
+            "severity": "2",
+            "host": "qa3app02",
+            "description": "The remote Terminal Services service is not configured to use strong cryptography. \n\nUsing weak cryptography with this service may allow an attacker to eavesdrop on the communications more easily and obtain screenshots and/or keystrokes.",
+            "plugin_name": "Terminal Services Encryption Level is Medium or Low",
+            "solution": "Change RDP encryption level to one of :\n\n 3. High\n\n 4. FIPS Compliant"
+        },
+        "Terminal Services Encryption Level is not FIPS-140 Compliant": {
+            "severity": "1",
+            "host": "qa3app02",
+            "description": "The encryption setting used by the remote Terminal Services service is not FIPS-140 compliant.",
+            "plugin_name": "Terminal Services Encryption Level is not FIPS-140 Compliant",
+            "solution": "Change RDP encryption level to :\n\n 4. FIPS Compliant"
+        },
+        "SMB Signing Disabled": {
+            "severity": "2",
+            "host": "qa3app02",
+            "description": "Signing is disabled on the remote SMB server.  This can allow man-in-the-middle attacks against the SMB server.",
+            "plugin_name": "SMB Signing Disabled",
+            "solution": "Enforce message signing in the host's configuration.  On Windows, this is found in the Local Security Policy.  On Samba, the setting is called 'server signing'.  See the 'see also' links for further details."
+        }
+    },
+    "qa3app01": {
+        "Terminal Services Doesn't Use Network Level Authentication (NLA)": {
+            "severity": "2",
+            "host": "qa3app01",
+            "description": "The remote Terminal Services is not configured to use Network Level Authentication (NLA). NLA uses the Credential Security Support Provider (CredSSP) protocol to perform strong server authentication either through TLS/SSL or Kerberos mechanisms, which protect against man-in-the-middle attacks. In addition to improving authentication, NLA also helps protect the remote computer from malicious users and software by completing user authentication before a full RDP connection is established.",
+            "plugin_name": "Terminal Services Doesn't Use Network Level Authentication (NLA)",
+            "solution": "Enable Network Level Authentication (NLA) on the remote RDP server. This is generally done on the 'Remote' tab of the 'System' settings on Windows."
+        },
+        "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness": {
+            "severity": "2",
+            "host": "qa3app01",
+            "description": "The remote version of the Remote Desktop Protocol Server (Terminal Service) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP client makes no effort to validate the identity of the server when setting up encryption. An attacker with the ability to intercept traffic from the RDP server can establish encryption with the client and server without being detected. A MiTM attack of this nature would allow the attacker to obtain any sensitive information transmitted, including authentication credentials.\n\nThis flaw exists because the RDP server stores a hardcoded RSA private key in the mstlsapi.dll library. Any local user with access to this file (on any Windows system) can retrieve the key and use it for this attack.",
+            "plugin_name": "Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness",
+            "solution": "- Force the use of SSL as a transport layer for this service if supported, or/and\n- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available."
+        },
+        "Terminal Services Encryption Level is Medium or Low": {
+            "severity": "2",
+            "host": "qa3app01",
+            "description": "The remote Terminal Services service is not configured to use strong cryptography. \n\nUsing weak cryptography with this service may allow an attacker to eavesdrop on the communications more easily and obtain screenshots and/or keystrokes.",
+            "plugin_name": "Terminal Services Encryption Level is Medium or Low",
+            "solution": "Change RDP encryption level to one of :\n\n 3. High\n\n 4. FIPS Compliant"
+        },
+        "Terminal Services Encryption Level is not FIPS-140 Compliant": {
+            "severity": "1",
+            "host": "qa3app01",
+            "description": "The encryption setting used by the remote Terminal Services service is not FIPS-140 compliant.",
+            "plugin_name": "Terminal Services Encryption Level is not FIPS-140 Compliant",
+            "solution": "Change RDP encryption level to :\n\n 4. FIPS Compliant"
+        },
+        "SMB Signing Disabled": {
+            "severity": "2",
+            "host": "qa3app01",
+            "description": "Signing is disabled on the remote SMB server.  This can allow man-in-the-middle attacks against the SMB server.",
+            "plugin_name": "SMB Signing Disabled",
+            "solution": "Enforce message signing in the host's configuration.  On Windows, this is found in the Local Security Policy.  On Samba, the setting is called 'server signing'.  See the 'see also' links for further details."
+        }
+    }
+}
